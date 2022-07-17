@@ -1,0 +1,55 @@
+html {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.like-button {
+  background-color: #5778ec; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  width: 150px;
+}
+
+.deslike-button {
+  background-color: #d3340d; /* red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  width: 150px;
+}
+
+#likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#deslikes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

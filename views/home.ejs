@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unity Technologies</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>Unity</h1>
+  </div>
+  <div class="container">
+    <div>
+      <h3>Likes</h3>
+      <div id="likes"></div>
+      <button class="like-button" onclick="sendLike()">Like</button>
+    </div>
+    <div>
+      <h3>Deslikes</h3>
+      <div id="deslikes"></div>
+      <button class="deslike-button" onclick="sendDeslike()">Deslike</button>
+    </div>
+  </div>
+  <span hidden id="ip">
+    <%= ip %>
+  </span>
+  <span hidden id="port">
+    <%= port %>
+  </span>
+</body>
+
+<script>
+  let ip = document.querySelector('#ip').innerText.trim();
+  let port = document.querySelector('#port').innerText.trim();
+
+  const ws = new WebSocket(`ws://${ip}:${port}`);
+
+  ws.addEventListener('open', (connection) => {
+    ws.addEventListener('message', (message) => {
+      let { likes, deslikes } = JSON.parse(message.data)
+      let pLikes = document.createElement('p')
+      let pDeslikes = document.createElement('p')
+      pLikes.innerText = likes;
+      pDeslikes.innerText = deslikes;
+
+      document.querySelector('#likes').replaceChildren(pLikes)
+      document.querySelector('#deslikes').replaceChildren(pDeslikes)
+    })
+  })
+</script>
+
+<script>
+  function sendLike() {
+    ws.send('like')
+  }
+  function sendDeslike() {
+    ws.send('deslike')
+  }
+</script>
+
+</html>

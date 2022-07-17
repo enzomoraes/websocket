@@ -1,1 +1,5 @@
 # websocket
+
+##ADICIONAR VARIAVEIS DE AMBIENTE
+IP
+PORT
