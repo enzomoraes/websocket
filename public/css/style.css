@@ -1,5 +1,6 @@
 html {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 32px;
 }
 
 .header {
@@ -50,6 +51,21 @@ html {
 
 #deslikes {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.deslikes {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }

@@ -14,12 +14,12 @@
     <h1>Unity</h1>
   </div>
   <div class="container">
-    <div>
+    <div class="deslikes">
       <h3>Likes</h3>
       <div id="likes"></div>
       <button class="like-button" onclick="sendLike()">Like</button>
     </div>
-    <div>
+    <div class="likes">
       <h3>Deslikes</h3>
       <div id="deslikes"></div>
       <button class="deslike-button" onclick="sendDeslike()">Deslike</button>
@@ -42,8 +42,8 @@
   ws.addEventListener('open', (connection) => {
     ws.addEventListener('message', (message) => {
       let { likes, deslikes } = JSON.parse(message.data)
-      let pLikes = document.createElement('p')
-      let pDeslikes = document.createElement('p')
+      let pLikes = document.createElement('h1')
+      let pDeslikes = document.createElement('h1')
       pLikes.innerText = likes;
       pDeslikes.innerText = deslikes;
 

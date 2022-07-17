@@ -19,6 +19,15 @@ app.get('/', (req, res) => {
   res.render('home', { port, ip });
 });
 
+app.get('/admin/reset', (req, res, next) => {
+  likes = 0;
+  deslikes = 0;
+  websocket.clients.forEach(client => {
+    client.send(JSON.stringify({ likes, deslikes }));
+  });
+  res.json();
+})
+
 const websocket = new WebSocketServer({
   server,
 });
