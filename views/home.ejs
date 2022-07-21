@@ -37,7 +37,7 @@
   let ip = document.querySelector('#ip').innerText.trim();
   let port = document.querySelector('#port').innerText.trim();
 
-  const ws = new WebSocket(`ws://${ip}`);
+  const ws = new WebSocket(`wss://${ip}`);
 
   ws.addEventListener('open', (connection) => {
     ws.addEventListener('message', (message) => {
