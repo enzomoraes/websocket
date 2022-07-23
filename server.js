@@ -19,6 +19,13 @@ app.get('/', (req, res) => {
   res.render('home', { port, ip });
 });
 
+
+app.get('/local', (req, res) => {
+  let port = process.env.PORT
+  let ip = process.env.IP
+  res.render('local', { port, ip });
+});
+
 app.get('/admin/reset', (req, res, next) => {
   likes = 0;
   deslikes = 0;
