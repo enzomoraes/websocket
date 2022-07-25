@@ -60,6 +60,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-left: 30px;
 }
 
 
@@ -68,4 +69,5 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-right: 30px;
 }
